@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+######### picarServer
+#
+# starts sunfounder PiCar-V server
+#
+
+function remoteControl()
+{
+    cd /home/pi/SunFounder_PiCar-V/remote_control
+    ./start 
+}
+
+while [ $# -gt 0 ]; do
+    case "$1" in 
+        start )
+                remoteControl
+                ;;
+        systemdStart )
+                $0 start &
+                ;; 
+    esac
+    shift
+done
