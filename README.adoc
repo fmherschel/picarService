@@ -1,0 +1,23 @@
+== picarService - Integration of picar remote service into systemd 
+
+The project picarService implements a lightwight integration of the sunfounder remote control server
+into Linux systemd.
+
+You can start the picar server using the command:
+
+----
+ systemctl start picar
+----
+
+The service could be stopped using the command:
+
+---- 
+ systemctl stop picar
+----
+
+To tell the system to start the picar server automatically during systen boot you need to enable the service:
+
+----
+ systemctl enable picar
+----
+ 
