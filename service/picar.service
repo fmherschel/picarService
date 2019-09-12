@@ -1,0 +1,16 @@
+[Unit]
+Description=Sunfounder Picar Server
+After=network.target auditd.service
+ConditionPathExists=!/boot/picar_not_to_be_run
+
+[Service]
+ExecStart=/usr/local/bin/picarServer systemdStart
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=control-group
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+Alias=picard.service
